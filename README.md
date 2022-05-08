@@ -1,2 +1,2 @@
 # hick-os
-Just my Arch Linux rice
+Just my Arch rice
