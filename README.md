@@ -1,2 +1,2 @@
 # hick-os
-Just my Arch rice
+Just my OS rice
