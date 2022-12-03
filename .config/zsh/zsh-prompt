@@ -29,10 +29,10 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:git:*' formats " %r/%S %b %m%u%c "
-zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})"
+zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%c%{$reset_color%}"
 
 # format our main prompt for hostname current folder, and permissions.
-PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}H¡ckey%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT="%B%{$fg[yellow]%}[%{$fg_bold[cyan]%}H¡ckey%{$fg[yellow]%}]%b %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[yellow]%}%c%{$reset_color%}"
 # PROMPT="%{$fg[green]%}%n@%m %~ %{$reset_color%}%#> "
 PROMPT+="\$vcs_info_msg_0_ "
 # TODO look into this for more colors
