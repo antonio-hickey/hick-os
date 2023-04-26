@@ -28,7 +28,7 @@ lvim.keys.normal_mode["<S-m>"] = "<cmd>lua require('harpoon.mark').add_file()<CR
 -- -- Theme settings
 -- Set light vs dark mode based on current hour
 -- if before 3 pm use light mode else use dark
-local color_mode = os.date('%H') > 15 and 'dark' or 'light'
+local color_mode = tonumber(os.date('%H')) > 15 and 'dark' or 'light'
 lvim.colorscheme = "rose-pine"
 vim.opt.background = color_mode
 
