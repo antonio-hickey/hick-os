@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "luisiacc/gruvbox-baby"
+  use "aktersnurra/no-clown-fiesta.nvim"
+	use "rose-pine/neovim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -72,6 +74,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "simrat39/rust-tools.nvim"  -- better rust dx
+  use "roobert/tailwindcss-colorizer-cmp.nvim" -- better tailwind dx
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -83,8 +87,8 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- Rust
-  use("simrat39/rust-tools.nvim")
+  -- Markdown
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
