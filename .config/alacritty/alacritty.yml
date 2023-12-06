@@ -4,7 +4,7 @@ shell: /bin/zsh
 # Font settings
 font:
   normal:
-    family: SpaceMono Nerd Font
+    family: FiraCode Nerd Font
   size: 14.0
 
 # Padding settings
