@@ -104,8 +104,6 @@ label:focus {
 
 #network {
   background: #1d1f21;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #network.disconnected {
@@ -121,4 +119,10 @@ label:focus {
 
 #temperature.critical {
   background-color: #eb4d4b;
+}
+
+#pulseaudio {
+  background: #1d1f21;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
