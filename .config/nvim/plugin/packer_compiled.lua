@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["citrus-mist"] = {
+    loaded = true,
+    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/citrus-mist",
+    url = "https://github.com/antonio-hickey/citrus-mist"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -254,11 +259,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
-  },
-  ["rust-tools.nvim"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
-    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["tailwindcss-colorizer-cmp.nvim"] = {
     loaded = true,

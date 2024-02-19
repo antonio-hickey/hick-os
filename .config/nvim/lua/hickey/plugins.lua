@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use "luisiacc/gruvbox-baby"
   use "aktersnurra/no-clown-fiesta.nvim"
 	use "rose-pine/neovim"
+  use "antonio-hickey/citrus-mist"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -74,7 +75,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "simrat39/rust-tools.nvim"  -- better rust dx
+  --use "simrat39/rust-tools.nvim"  -- better rust dx
   use "roobert/tailwindcss-colorizer-cmp.nvim" -- better tailwind dx
 
   -- snippets
