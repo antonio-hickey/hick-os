@@ -79,11 +79,6 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-  if client.name == "rust_analyzer" then
-    -- Enable auto-formatting on save
-    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-  end
-
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then

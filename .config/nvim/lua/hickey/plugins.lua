@@ -40,59 +40,36 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  use "kyazdani42/nvim-web-devicons" -- Icons
+  use "stevearc/oil.nvim" -- File manager with buffer like mutability
+  use "moll/vim-bbye" -- Ability to delete buffers without closing window
+  use "akinsho/toggleterm.nvim" -- Terminal plugin
+  use "lukas-reineke/indent-blankline.nvim" -- auto indent new lines
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
-  use "xiyaowong/nvim-transparent" -- Transparent window
-
-  -- Colorschemes
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-  use "luisiacc/gruvbox-baby"
-  use "aktersnurra/no-clown-fiesta.nvim"
-	use "rose-pine/neovim"
-  use "antonio-hickey/citrus-mist"
-
-  -- cmp plugins
+  use "folke/which-key.nvim" -- Display menu for my custom keybinds
+  use "nvim-telescope/telescope.nvim" -- fuzzy finder
+  use "nvim-lualine/lualine.nvim" -- better status line
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-nvim-lsp" -- completion for neovim builtin lsp client
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  --use "simrat39/rust-tools.nvim"  -- better rust dx
+  use "mrcjkb/rustaceanvim"  -- better rust dx
   use "roobert/tailwindcss-colorizer-cmp.nvim" -- better tailwind dx
-
-  -- snippets
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end} -- better markdown dx
   use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-  -- LSP
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
-  -- Markdown
-  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
-
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use "lewis6991/gitsigns.nvim" -- git integration for buffers
 
   -- Treesitter
   use {
@@ -101,11 +78,13 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
-  -- Git
-  use "lewis6991/gitsigns.nvim"
+  -- Colorschemes
+  use "luisiacc/gruvbox-baby"
+  use "aktersnurra/no-clown-fiesta.nvim"
+	use "rose-pine/neovim"
+  use "antonio-hickey/citrus-mist"
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

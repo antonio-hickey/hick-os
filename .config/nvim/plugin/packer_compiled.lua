@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
+local package_path_str = "/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/hickstoor/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -89,16 +89,6 @@ _G.packer_plugins = {
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["alpha-nvim"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
-  },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["citrus-mist"] = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/citrus-mist",
@@ -129,16 +119,6 @@ _G.packer_plugins = {
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  colorschemes = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/colorschemes",
-    url = "https://github.com/lunarvim/colorschemes"
-  },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -159,11 +139,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
     url = "https://github.com/luisiacc/gruvbox-baby"
-  },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -215,16 +190,6 @@ _G.packer_plugins = {
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-transparent"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/nvim-transparent",
-    url = "https://github.com/xiyaowong/nvim-transparent"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -239,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -255,10 +225,10 @@ _G.packer_plugins = {
     path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["project.nvim"] = {
+  rustaceanvim = {
     loaded = true,
-    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/project.nvim",
-    url = "https://github.com/ahmedkhalf/project.nvim"
+    path = "/home/hickstoor/.local/share/nvim/site/pack/packer/start/rustaceanvim",
+    url = "https://github.com/mrcjkb/rustaceanvim"
   },
   ["tailwindcss-colorizer-cmp.nvim"] = {
     loaded = true,
