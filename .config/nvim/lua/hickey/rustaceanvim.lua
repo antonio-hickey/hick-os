@@ -1,11 +1,18 @@
 vim.g.rustaceanvim = {
   -- Plugin configuration
-  tools = {
-  },
+  tools = {},
   -- LSP configuration
   server = {
     on_attach = function(client, bufnr)
-      -- you can also put keymaps in here
+      -- Format on save
+      if client.resolved_capabilities.document_formatting then
+        vim.cmd([[
+          augroup LspAutocommands
+            autocmd! * <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+          augroup END
+        ]])
+      end
     end,
     default_settings = {
       -- rust-analyzer language server configuration
@@ -37,13 +44,12 @@ vim.g.rustaceanvim = {
         },
         completion = {
           postfix = {
-            enable = false,
+            enable = true,
           }
         }
       },
     },
   },
   -- DAP configuration
-  dap = {
-  },
+  dap = {},
 }
