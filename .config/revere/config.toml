@@ -1,8 +1,0 @@
-[window]
-placement = { x = "Top", y = "Right" }
-size = { height = 100, width = 350 }
-color = { bg = "#ffffff", fg = "#000000" }
-border = { width = 8, color = "#000000", alpha = 0.75 }
-font_size = 15
-duration = 3
-margin = { top = 10, right = 10, bottom = 0, left = 0 }
