@@ -4,15 +4,14 @@ vim.g.rustaceanvim = {
   -- LSP configuration
   server = {
     on_attach = function(client, bufnr)
-      -- Format on save
-      if client.resolved_capabilities.document_formatting then
+      if client.server_capabilities.documentFormattingProvider then
         vim.cmd([[
           augroup LspAutocommands
             autocmd! * <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 2000 })
           augroup END
         ]])
-      end
+      end 
     end,
     default_settings = {
       -- rust-analyzer language server configuration
