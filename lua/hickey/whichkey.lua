@@ -3,6 +3,20 @@ if not status_ok then
   return
 end
 
+local function oracle_cmd(cmd)
+  local mode = vim.fn.mode()
+  if mode == "v" or mode == "V" then
+    -- Close which-key window
+    -- It will affect with selection (diff buffer)
+    vim.cmd('normal! :<C-u>')
+
+    -- Run the Oracle command with the selection range
+    vim.cmd(string.format("'<,'>%s", cmd))
+  else
+    vim.cmd(cmd)
+  end
+end
+
 local setup = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -58,8 +72,13 @@ local setup = {
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
-  triggers = "auto", -- automatically setup triggers
-  -- triggers = {"<leader>"} -- or specify a list manually
+  --triggers = "auto", -- automatically setup triggers
+  triggers = {"<leader>", mode={"n", "v"}}, -- or specify a list manually
+  -- Ensure which-key is only triggered by <leader> in visual mode
+  triggers_nowait = {
+    n = { "<leader>" },
+    v = { "<leader>" },  -- Only trigger on <leader> in visual mode
+  },
   triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
     -- this is mostly relevant for key maps that start with a native binding
@@ -70,7 +89,7 @@ local setup = {
 }
 
 local opts = {
-  mode = "n", -- NORMAL mode
+  mode = {"n", "v"},
   prefix = "<leader>",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
@@ -83,11 +102,8 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
-  ["e"] = { "<cmd>Oil --float<CR>", "File Manager" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["e"] = { "<cmd>Oil<CR>", "File Manager" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
@@ -95,6 +111,7 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
   p = {
+    icon = "",
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
     i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -127,8 +144,10 @@ local mappings = {
   },
 
   l = {
+    icon = "󰘦",
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    c = { "<cmd>RustLsp openCargo<cr>", "Open Cargo.toml" },
     d = {
       "<cmd>Telescope lsp_document_diagnostics<cr>",
       "Document Diagnostics",
@@ -157,6 +176,20 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
+  o = {
+    icon = "",
+    name = "Oracle",
+    a = { function() oracle_cmd("OracleAsk") end, "Ask Question" },
+    c = { function() oracle_cmd("OracleComment") end, "Generate Comments" },
+    d = { function() oracle_cmd("OracleChat") end, "Discuss Something" },
+    e = { function() oracle_cmd("OracleRefactor") end, "Enhance Code" },
+    g = { function() oracle_cmd("OracleGenerate") end, "Generate Code" },
+    r = { function() oracle_cmd("OracleReview") end, "Review Code" },
+    s = { function() oracle_cmd("OracleSummarize") end, "Summarize Code" },
+    u = { function() oracle_cmd("OracleChange") end, "Update Code" },
+  },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -182,4 +215,5 @@ local mappings = {
 }
 
 which_key.setup(setup)
+
 which_key.register(mappings, opts)

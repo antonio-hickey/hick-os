@@ -40,6 +40,7 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+  use "antonio-hickey/Oracle.nvim" -- Interact with language models within neovim
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -52,6 +53,7 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- auto indent new lines
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim" -- Display menu for my custom keybinds
+  use "folke/zen-mode.nvim" -- Focus mode
   use "nvim-telescope/telescope.nvim" -- fuzzy finder
   use "nvim-lualine/lualine.nvim" -- better status line
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -65,10 +67,9 @@ return packer.startup(function(use)
   use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end} -- better markdown dx
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "neovim/nvim-lspconfig" -- LSP
+  use "williamboman/mason.nvim" -- LSP manager
+  use "williamboman/mason-lspconfig.nvim" -- LSP Config manager
   use "lewis6991/gitsigns.nvim" -- git integration for buffers
 
   -- Treesitter
@@ -77,6 +78,25 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- Obsidian
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/hick-vault/",
+          },
+        },
+      })
+    end,
+  })
 
   -- Colorschemes
   use "luisiacc/gruvbox-baby"
