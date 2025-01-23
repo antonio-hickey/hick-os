@@ -71,6 +71,7 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim" -- LSP manager
   use "williamboman/mason-lspconfig.nvim" -- LSP Config manager
   use "lewis6991/gitsigns.nvim" -- git integration for buffers
+  use "chentoast/marks.nvim" -- Better ux for marks
 
   -- Treesitter
   use {
@@ -90,8 +91,8 @@ return packer.startup(function(use)
       require("obsidian").setup({
         workspaces = {
           {
-            name = "personal",
-            path = "~/hick-vault/",
+            name = "work",
+            path = "~/work/knowledge-base",
           },
         },
       })
@@ -103,6 +104,7 @@ return packer.startup(function(use)
   use "aktersnurra/no-clown-fiesta.nvim"
 	use "rose-pine/neovim"
   use "antonio-hickey/citrus-mist"
+  use "catppuccin/nvim"
 
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then

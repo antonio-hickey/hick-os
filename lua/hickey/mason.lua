@@ -3,8 +3,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "ruff_lsp",
-    "tsserver",
+    "ts_ls",
     "eslint",
     "tailwindcss",
     "emmet_language_server",
@@ -12,8 +11,10 @@ require("mason-lspconfig").setup({
   },
 })
 require("mason-lspconfig").setup_handlers({
+  ["rust_analyzer"] = function() end,
+
   function(server_name)
-    if server_name == "tsserver" then
+    if server_name == "typescript-langauge-server" then
       server_name = "ts_ls"
     end
 
