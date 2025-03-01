@@ -1,4 +1,7 @@
 require("obsidian").setup({
+  -- NOTE: If you're using my config for some reason
+  -- you need to change these paths to wherever your
+  -- obsidian workspace is located.
   workspaces = {
     {
       name = "work",
@@ -6,7 +9,7 @@ require("obsidian").setup({
     },
     {
       name = "personal",
-      path = "TODO: get personal path at home",
+      path = "~/hick-vault",
     },
   },
   daily_notes = {
