@@ -199,8 +199,11 @@ local opts = {
 local mappings = {
   {
     "<leader>b",
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    desc = "Buffers"
+    icon = "",
+    name = "Buffers",
+    group = "buffers",
+    { "<leader>bs", desc = "Search", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>" },
+    { "<leader>bl", desc = "Last Buffer", "<cmd>b#<cr>" }
   },
   { "<leader>e", "<cmd>Oil<CR>", desc = "File Manager" },
   { "<leader>c", "<cmd>Bdelete!<CR>", desc = "Close Buffer" },
