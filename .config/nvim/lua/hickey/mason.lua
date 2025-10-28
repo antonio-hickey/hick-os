@@ -2,15 +2,12 @@ require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
-    "pyright",
     "ts_ls",
-    "eslint",
     "tailwindcss",
     "emmet_language_server",
-    "jsonls",
   },
 })
-require("mason-lspconfig").setup_handlers({
+require("mason-lspconfig").setup({
   ["rust_analyzer"] = function() end,
 
   function(server_name)
