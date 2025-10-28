@@ -4,7 +4,6 @@ alias nvimrc="nvim ~/.config/nvim/"
 
 alias allow_net="sudo systemctl start NetworkManager"
 alias update="sudo pacman -Syu && paru -Syu"
-alias reconfig="bash $HOME/.hick-os/scripts/link-configs.sh"
 
 # File path shortcuts
 alias fun="cd ~/projects/fun"
@@ -12,6 +11,11 @@ alias work="cd ~/projects/work"
 alias school="cd ~/projects/school"
 alias contrib="cd ~/projects/contributions"
 alias contribute="cd ~/projects/contributions"
+
+# Personal shortcuts
+alias reconfig="bash $HOME/.hick-os/scripts/link-configs.sh"
+alias config="nvim $HOME/.hick-os/.config"
+alias hick="cd $HOME/.hick-os"
 
 # Server connection aliases
 # These are local ip"s so it"s fine to push to public
