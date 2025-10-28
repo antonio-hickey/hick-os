@@ -5,15 +5,14 @@ TARGET="$HOME/.config"
 
 mkdir -p "$TARGET"
 
-for dir in "$SOURCE"/*/; do
-    name=$(basename "$dir")
-    src="$dir"
+for item in "$SOURCE"/* "$SOURCE"/.*; do
+    name=$(basename "$item")
     dest="$TARGET/$name"
 
     if [[ -e "$dest" || -L "$dest" ]]; then
         rm -rf "$dest"
     fi
 
-    ln -s "$src" "$dest"
-    echo "🔗 Linked config: $name → $dest"
+    ln -s "$item" "$dest"
+    echo "🔗 Linked config: $item → $dest"
 done
