@@ -45,6 +45,7 @@ alias rm="rm -i"
 # Modern replacements for specific tools
 alias ls="eza"
 alias cat="bat"
+alias yay="paru"
 
 # easier to read disk
 alias df="df -h"     # human-readable sizes
