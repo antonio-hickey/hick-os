@@ -1,4 +1,5 @@
 #!/bin/sh
+
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -11,7 +12,6 @@ zle_highlight=('paste:none')
 
 # beeping is annoying
 unsetopt BEEP
-
 
 # completions
 autoload -Uz compinit
@@ -33,10 +33,10 @@ autoload -Uz colors && colors
 source "$ZDOTDIR/zsh-functions"
 
 # Normal files to source
-zsh_add_file "zsh-exports"
-zsh_add_file "zsh-vim-mode"
-zsh_add_file "zsh-aliases"
-zsh_add_file "zsh-prompt"
+source "$ZDOTDIR/zsh-export"
+source "$ZDOTDIR/zsh-vim"
+source "$ZDOTDIR/zsh-aliases"
+source "$ZDOTDIR/zsh-prompt"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -54,8 +54,6 @@ bindkey -s '^s' 'ncdu^M'
 # bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
-bindkey "^p" up-line-or-beginning-search # Up
-bindkey "^n" down-line-or-beginning-search # Down
 bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
@@ -74,20 +72,8 @@ compinit
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-# bindkey '^e' edit-command-line
 
-# Speedy keys
-xset r rate 210 40
-
-# Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="firefox"
-
-# For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# remap caps to escape
-# setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
+# Auto start tmux
+if [ -z "$TMUX" ]; then
+  exec ~/.hick-os/scripts/start-tmux.sh
+fi
