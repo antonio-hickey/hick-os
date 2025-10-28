@@ -6,6 +6,8 @@ alias allow_net="sudo systemctl start NetworkManager"
 alias update="sudo pacman -Syu && paru -Syu"
 
 # File path shortcuts
+#
+# TODO: Update to no longer use 'projects'
 alias fun="cd ~/projects/fun"
 alias work="cd ~/projects/work"
 alias school="cd ~/projects/school"
@@ -17,14 +19,10 @@ alias reconfig="bash $HOME/.hick-os/scripts/link-configs.sh"
 alias config="nvim $HOME/.hick-os/.config"
 alias hick="cd $HOME/.hick-os"
 
-# Server connection aliases
-# These are local ip"s so it"s fine to push to public
-alias web_host="ssh -i ~/.ssh/hickey-server -p 2222 hickstoor@10.159.158.57"
-alias git_host="ssh -i ~/.ssh/hickey-server -p 2222 git@10.159.158.57"
-alias data_host="ssh -i ~/.ssh/hickey-server hickstoor@10.159.158.69"
+# Get the remote IP of the machine
 function remote_ip() {
   # SECRET: DO NOT COMMIT with ip
-  echo "{MY_REMOTE_IP}"
+  echo "{REPLACE_WITH_REMOTE_IP}"
 }
 
 alias zsh-update-plugins='find "$ZDOTDIR/plugins" -type d -exec test -e "{}/.git" ";" -print0 | xargs -I {} -0 git -C {} pull -q'

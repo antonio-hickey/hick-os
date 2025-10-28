@@ -29,14 +29,13 @@ zle -N down-line-or-beginning-search
 # Colors
 autoload -Uz colors && colors
 
-# Useful Functions
-source "$ZDOTDIR/zsh-functions"
-
-# Normal files to source
-source "$ZDOTDIR/zsh-export"
-source "$ZDOTDIR/zsh-vim"
-source "$ZDOTDIR/zsh-aliases"
-source "$ZDOTDIR/zsh-prompt"
+# Files to source along with this file
+source "$ZDOTDIR/functions"
+source "$ZDOTDIR/export"
+source "$ZDOTDIR/vim-mode"
+source "$ZDOTDIR/aliases"
+source "$ZDOTDIR/prompt"
+source "$ZDOTDIR/sensitive"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

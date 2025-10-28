@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# NOTE: This file should NEVER be committed with content.
+# It serves only as a skeleton file.
+
+# <Sensitive Shortcuts>
+#
+# Purpose: Alias shortcuts which contain sensitive information
+# that is to be excluded from my public repository.
+#
+# NOTE: Do not manually edit anything in block, this
+# block is automatically managed via scripts.
+# </Sensitive Shortcuts>
