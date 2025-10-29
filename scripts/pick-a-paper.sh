@@ -2,7 +2,7 @@
 
 MONITOR="DP-2"
 
-WALLPAPER_DIR="$HOME/hick-os/wallpapers"
+WALLPAPER_DIR="$HOME/.hick-os/wallpapers"
 
 SELECTED=$(find "$WALLPAPER_DIR" -type f | wofi --dmenu --prompt="Select Wallpaper: ")
 
