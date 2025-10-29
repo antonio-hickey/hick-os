@@ -1,7 +1,7 @@
 [packages.pacman]
 base = ["neovim", "git", "openssh", "zsh", "ripgrep", "python", "base-devel", "htop", "networkmanager", "tmux"]
 development = [ "rustup", "llvm", "bacon", "cargo-asm", "cargo-flamegraph", "nodejs", "nvm", "python", "uv", "zig", "lefthook", "git-delta"]
-desktop = [ "hyprland", "hyprpaper", "hyprpicker", "hyprcursor", "waybar", "wofi", "firefox", "neomutt", "protonmail-bridge-core", "discord", "mpv" ]
+desktop = [ "hyprland", "hyprpaper", "hyprpicker", "hyprcursor", "waybar", "wofi", "firefox", "neomutt", "protonmail-bridge-core", "discord", "mpv"]
 security = ["radare2", "wireshark-cli", "nmap", "openbsd-netcat"]
 extras = ["eza", "bat", "atuin", "yazi"]
 art = ["gimp", "inkscape", "obs-studio"]

@@ -52,8 +52,15 @@ selection=("${valid_selection[@]}")
 for i in "${selection[@]}"; do
     key="${keys[$((i-1))]}"
 
-    value=$(echo "$section_lines" | grep "^$key" | sed -E 's/^[^=]+=[[:space:]]*\[(.*)\]/\1/')
-    value=$(echo "$value" | sed -E 's/"//g; s/,/ /g')
+    value=$(awk -v key="$key" '
+        $0 ~ key"[[:space:]]*=" {found=1}
+        found {
+            gsub(/^[[:space:]]+|[[:space:]]+$/, "")
+            if ($0 ~ /\]/) {print; exit}
+            print
+        }
+    ' <<< "$section_lines" | tr -d '[]"'\''',)
+    value=$(echo "$value" | tr ',' ' ' | xargs)
 
     echo -e "${GREEN}Installing package group: $key${NO_COLOR}: $value"
     sudo pacman -Syu --noconfirm $value
