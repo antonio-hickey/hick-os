@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SESSION="main"
+SESSION=$(echo "$$ $RANDOM" | md5sum | cut -c1-6)
 
 # Only create session if it doesn't exist
 tmux has-session -t $SESSION 2>/dev/null || {
