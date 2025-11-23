@@ -6,11 +6,13 @@
   italic.family = "FiraCode Nerd Font" 
   bold_italic.family = "FiraCode Nerd Font" 
 
-# Padding settings
+[window]
+  opacity = 0.8
+
 [window.padding]
-    x = 6  # Horizontal padding (left and right)
-    y = 6  # Vertical padding (top and bottom)
+  x = 6  # Horizontal padding
+  y = 6  # Vertical padding
 
 [terminal]
-# Shell to execute (required)
-shell = "/bin/zsh"
+  # Shell to execute (required)
+  shell = "/bin/zsh"
