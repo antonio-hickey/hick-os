@@ -36,6 +36,7 @@ source "$ZDOTDIR/vim-mode"
 source "$ZDOTDIR/aliases"
 source "$ZDOTDIR/prompt"
 source "$ZDOTDIR/sensitive"
+source "$ZDOTDIR/zoxide"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

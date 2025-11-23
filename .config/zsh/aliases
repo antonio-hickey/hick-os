@@ -45,6 +45,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 # Modern replacements for specific tools
+alias cd="z"
 alias ls="eza"
 alias cat="bat"
 alias yay="paru"
