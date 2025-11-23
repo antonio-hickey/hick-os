@@ -1,0 +1,57 @@
+/*
+UI Mod:
+Move the nav bar (tabs, searchbar, toolbar) 
+to the bottom of the screen.
+*/
+#navigator-toolbox {
+  position: fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+  width: 100vw !important;
+  z-index: 1000 !important;
+}
+
+/* 
+UI Mod: 
+Make the url options view pop up prettier.
+*/
+#urlbar[open] > .urlbarView {
+  /* Positioned properly for bottom toolbar */
+  position: fixed !important;
+  bottom: 48px !important;
+  left: 0 !important;
+  width: 70vw !important;
+  max-width: none !important;
+  z-index: 999999 !important;
+
+  /* Slightly rounded corners */
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background-clip: padding-box !important;
+
+  /* Very slight opacity and shadow */
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,1) !important;
+}
+
+/* 
+Bug Fix:
+Ensure the url options view opens upwards.
+(Sense the toolbar is at the bottom of screen it doesn't
+ display the url options view when opening downwards).
+*/
+#urlbar[open] .urlbarView-results {
+  padding-bottom: 40px !important;
+}
+
+/* 
+Bug Fix: 
+Keep the "Search with" (engine) pinned at proper position. 
+*/
+#urlbar-searchmode-switcher.searchmode-switcher {
+  position: static !important;
+  margin: 0 !important;
+  padding: 1 !important;
+  inset: auto !important;
+  transform: none !important;
+}
