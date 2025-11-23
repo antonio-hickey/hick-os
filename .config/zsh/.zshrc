@@ -73,6 +73,9 @@ compinit
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 
+# Setup atuin shell history
+eval "$(atuin init zsh)"
+
 # Auto start tmux
 if [ -z "$TMUX" ]; then
   exec ~/.hick-os/scripts/start-tmux.sh
