@@ -81,8 +81,5 @@ if [ -z "$TMUX" ]; then
   exec ~/.hick-os/scripts/start-tmux.sh
 fi
 
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # bun completions
-[ -s "/home/hickstoor/.bun/_bun" ] && source "/home/hickstoor/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
