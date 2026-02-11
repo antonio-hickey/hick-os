@@ -8,11 +8,11 @@ alias update="sudo pacman -Syu && paru -Syu"
 # File path shortcuts
 #
 # TODO: Update to no longer use 'projects'
-alias fun="cd ~/projects/fun"
-alias work="cd ~/projects/work"
-alias school="cd ~/projects/school"
-alias contrib="cd ~/projects/contributions"
-alias contribute="cd ~/projects/contributions"
+alias fun="cd ~/fun"
+alias work="cd ~/work"
+alias school="cd ~/school"
+alias contrib="cd ~/contributions"
+alias contribute="cd ~/contributions"
 
 # Personal shortcuts
 alias reconfig="bash $HOME/.hick-os/scripts/link-configs.sh"
