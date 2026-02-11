@@ -45,3 +45,10 @@ vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set clipboard+=unnamedplus]]
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- Clear the "SIXEL IMAGE (1x1)" on start (work machine)
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("silent! !clear")
+  end
+})
