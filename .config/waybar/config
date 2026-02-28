@@ -2,6 +2,7 @@
     "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
+    "output": "DP-2",
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
@@ -20,6 +21,9 @@
             "3": "",
             "4": "",
             "5": "",
+            "6": "",
+            "7": "",
+            "8": "󰡉",
             "urgent": "",
             "focused": "",
             "default": ""
